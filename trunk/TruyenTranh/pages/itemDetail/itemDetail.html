@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>itemDetailPage</title>
+
+    <!-- WinJS references -->
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/pages/itemDetail/itemDetail.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/itemDetail/itemDetail.js"></script>
+</head>
+<body>
+
+    <div class="left-wrapper">
+        <div id="back-button-container">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+        </div>
+    </div>
+    <!-- end left-wrapper -->
+
+    <div class="right-wrapper">
+        <div class="header-title">
+            <h1></h1>
+        </div>
+
+        <div class="item-detail-container">
+            <!-- Template -->
+            <!-- The content that will be loaded and displayed. -->
+            <div class="itemdetailpage fragment">
+
+                <div class="content" aria-label="Main content" role="main">
+                    <article>
+                        <div class="item-image-container">
+                            <img class="item-image" src="" />
+                        </div>
+
+                        <div class="item-description">
+                            <h2>Giới thiệu :</h2>
+                            <div class="item-des"></div>
+                            <h2>Thể loại :</h2>
+                            <div class="item-type"></div>
+                        </div>
+
+                        <div class="item-list-chapter">
+                            <h2>Danh Sách Chapter</h2>
+                            <!-- Template -->
+
+                            <div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template">
+                                <div>
+                                    <h4 data-win-bind="innerText: name"></h4>
+                                </div>
+                            </div>
+
+                            <div class="chapterslist" data-win-control="WinJS.UI.ListView"
+                                data-win-options="{itemTemplate: select('#mediumListIconTextTemplate')}">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

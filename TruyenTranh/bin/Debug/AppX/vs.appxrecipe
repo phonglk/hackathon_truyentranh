@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>THANHTM60101</Machine>
+    <WindowsUser>TranMinhThanh</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <RegisteredManifestChecksum>C0BFA7F64C89E1E408C8B0B60862574E7AE9BA8C67C7A9E80AC32146284F7CBD</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>b7ec5222-d194-44cb-801d-8aa62eafaeba_1.0.0.0_neutral__93y2npyw7zbp0</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>b7ec5222-d194-44cb-801d-8aa62eafaeba_93y2npyw7zbp0!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>b7ec5222-d194-44cb-801d-8aa62eafaeba</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=NoName</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-11-10T07:11:59.653</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2012-11-10T07:11:46.302</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\itemDetail\itemDetail.css">
+      <PackagePath>pages\itemDetail\itemDetail.css</PackagePath>
+      <Modified>2012-11-10T02:49:54.023</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\groupDetail\groupDetail.css">
+      <PackagePath>pages\groupDetail\groupDetail.css</PackagePath>
+      <Modified>2012-11-10T02:49:53.918</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\groupedItems\groupedItems.css">
+      <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
+      <Modified>2012-11-10T02:49:54.159</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\mainMenu\main.css">
+      <PackagePath>pages\mainMenu\main.css</PackagePath>
+      <Modified>2012-11-10T07:11:57.499</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-11-10T04:26:45.829</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\images\main-menu-logo.png">
+      <PackagePath>images\main-menu-logo.png</PackagePath>
+      <Modified>2012-11-10T05:45:53.368</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-11-10T04:31:12.538</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-11-10T04:13:11.254</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-11-10T04:36:02.198</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\images\widelogo.png">
+      <PackagePath>images\widelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-11-10T04:15:51.845</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\js\data.js">
+      <PackagePath>js\data.js</PackagePath>
+      <Modified>2012-11-10T02:49:55.381</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2012-11-10T02:49:55.375</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\js\jquery-1.8.2.js">
+      <PackagePath>js\jquery-1.8.2.js</PackagePath>
+      <Modified>2012-11-10T04:42:22.993</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\js\listweb.js">
+      <PackagePath>js\listweb.js</PackagePath>
+      <Modified>2012-11-10T04:45:57.734</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\js\navigator.js">
+      <PackagePath>js\navigator.js</PackagePath>
+      <Modified>2012-11-10T02:49:55.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\js\truyen.js">
+      <PackagePath>js\truyen.js</PackagePath>
+      <Modified>2012-11-10T04:45:57.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\itemDetail\itemDetail.js">
+      <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
+      <Modified>2012-11-10T02:49:54.028</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\groupDetail\groupDetail.js">
+      <PackagePath>pages\groupDetail\groupDetail.js</PackagePath>
+      <Modified>2012-11-10T02:49:53.923</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\groupedItems\groupedItems.js">
+      <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
+      <Modified>2012-11-10T02:49:54.148</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\mainMenu\main.js">
+      <PackagePath>pages\mainMenu\main.js</PackagePath>
+      <Modified>2012-11-10T02:49:54.286</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\itemDetail\itemDetail.html">
+      <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
+      <Modified>2012-11-10T02:49:54.017</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\groupDetail\groupDetail.html">
+      <PackagePath>pages\groupDetail\groupDetail.html</PackagePath>
+      <Modified>2012-11-10T02:49:53.912</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\groupedItems\groupedItems.html">
+      <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
+      <Modified>2012-11-10T02:49:54.154</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2012-11-10T04:45:57.729</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\pages\mainMenu\main.html">
+      <PackagePath>pages\mainMenu\main.html</PackagePath>
+      <Modified>2012-11-10T07:08:25.383</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2012-11-10T07:11:59.164</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
+      <Name>Microsoft.WinJS.1.0</Name>
+      <Version>1.0.8514.0</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.8514.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

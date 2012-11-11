@@ -1,0 +1,39 @@
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bin\Debug\resources.pri
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bin\Debug\AppxManifest.xml
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bin\Debug\TruyenTranh.build.appxrecipe
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\priconfig.xml.intermediate
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\layout.resfiles.intermediate
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\resources.resfiles.intermediate
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\pri.resfiles.intermediate
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\priconfig.xml
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\layout.resfiles
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\resources.resfiles
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\pri.resfiles
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\LanguageQualifiers.txt
+G:\App_Win8_JS\TruyenTranh\TruyenTranh\bld\Debug\ProjectArchitectures.txt
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bin\Debug\resources.pri
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bin\Debug\AppxManifest.xml
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bin\Debug\TruyenTranh.build.appxrecipe
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\priconfig.xml.intermediate
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\layout.resfiles.intermediate
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\resources.resfiles.intermediate
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\pri.resfiles.intermediate
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\priconfig.xml
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\layout.resfiles
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\resources.resfiles
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\pri.resfiles
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\LanguageQualifiers.txt
+C:\Users\NoName\Desktop\Truyen\trunk\TruyenTranh\TruyenTranh\bld\Debug\ProjectArchitectures.txt
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bin\Debug\resources.pri
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bin\Debug\AppxManifest.xml
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bin\Debug\TruyenTranh.build.appxrecipe
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\priconfig.xml.intermediate
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\layout.resfiles.intermediate
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\resources.resfiles.intermediate
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\pri.resfiles.intermediate
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\priconfig.xml
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\layout.resfiles
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\resources.resfiles
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\pri.resfiles
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\LanguageQualifiers.txt
+D:\Developer\Windows 8 apps Develop\TruyenTranh\TruyenTranh\TruyenTranh\bld\Debug\ProjectArchitectures.txt

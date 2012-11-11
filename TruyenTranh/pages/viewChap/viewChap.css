@@ -1,0 +1,56 @@
+﻿.my-header {
+    position:fixed;
+    top:0;
+}
+.chapter-container {
+    width:90%;
+    height:100%;
+    position:relative;
+    overflow:scroll;
+}
+.left-side,
+.right-side{
+    width:80%; margin:auto;
+    
+}
+.right-side {
+    
+}
+
+.left-side img,
+.right-side img{
+    width:100%;
+    padding:0;
+    margin:0px 0px 10px 0px;
+    z-index:99999;
+}
+.back-page, .next-page {
+    position:fixed;
+    bottom:40%;
+    
+}
+.back-page:hover, .next-page:hover {
+    cursor:pointer;
+}
+.back-page {
+    left:12%;
+}
+.next-page {
+    right:11%;
+}
+.chapter-container button {
+    padding:5px;
+    border:none;
+    transition:all 0.4s;
+    display:none;
+}
+.chapter-container button:hover {
+    background-color:rgba(0, 0, 0, 0.2);
+    transition:all 0.4s;
+}
+.chapter-container button img {
+    height:80px;
+}
+.back-page{
+    -ms-transform:rotate(180deg);
+}

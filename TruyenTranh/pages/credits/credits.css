@@ -1,0 +1,45 @@
+﻿.credits section[role=main] {
+    margin-left: 120px;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .credits section[role=main] {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .credits section[role=main] {
+        margin-left: 100px;
+    }
+}
+
+.credit-content {
+    width:100%; height:100%;
+}
+.credit-content ul{
+    margin:10px; width:100%;
+    list-style:none;
+}
+.credit-content ul li{
+    width:100%;
+    margin:0px 0px 10px 0px;
+}
+.member-name {
+    font-weight:bold;
+    width:15%; display:inline-block;
+    text-align:right;
+}
+.member-info {
+    margin:0px 0px 0px 20px;
+    font-style:italic;
+    width:30%; text-align:left; display:inline-block;
+}
+.version {
+    font-size:50px;
+    position:absolute;
+    right:10%;
+    bottom:10%;
+    line-height:30px;
+}
+

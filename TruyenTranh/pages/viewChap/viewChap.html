@@ -15,21 +15,34 @@
 </head>
 <body>
     <div class="left-wrapper">
-        <div id="back-button-container" >
-            <button class="win-backbutton" aria-label="Back" disabled></button>
+        <div id="back-button-container" class="view-chap-back-button-container">
+            <button class="win-backbutton view-chap-win-backbutton" aria-label="Back" disabled></button>
         </div>
     </div>
     <!-- end left-wrapper -->
 
     <div class="right-wrapper">
-        
-        <div class="header-title my-header">
+
+        <div class="header-title view-chap-title">
+            <h1></h1>
+
+                <img class="next-page" src="../../images/right-arrow.png" />
+            
+            <select class="view-chap-chapter-list">
+                <option value="1">Chapter 1</option>
+                <option value="2">Chapter 2</option>
+                <option value="3">Chapter 3</option>
+                <option value="4">Chapter 4</option>
+            </select>
+
+                <img class="back-page" src="../../images/right-arrow.png" />
+            
         </div>
+
 
         <div class="chapter-container">
             
-            <button class="back-page"><img src="../../images/right-arrow.png" /></button>
-            <button class="next-page"><img src="../../images/right-arrow.png" /></button>
+            
             <!--<div class="left-side">
                     <img src="" />
             </div>

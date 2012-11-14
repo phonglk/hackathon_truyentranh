@@ -48,7 +48,7 @@
         } else {
             //listView.itemDataSource = Data.items.dataSource;
             //listView.groupDataSource = Data.groups.dataSource;
-            //listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
+            listView.layout = new ui.GridLayout({ groupHeaderPosition: "left" });
         }
     }
 

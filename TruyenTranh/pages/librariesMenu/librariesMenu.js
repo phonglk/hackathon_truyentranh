@@ -18,11 +18,7 @@
         }
 
         listControl.itemDataSource = bindWebsites.dataSource;
-
-
     }
-
-
 
     WinJS.UI.Pages.define("/pages/librariesMenu/librariesMenu.html", {
         ready: function (element, options) {

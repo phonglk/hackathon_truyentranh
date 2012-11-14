@@ -86,4 +86,13 @@
         transition:all 0.3s;
     }
 
-
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .chapter-container {
+    clear:both;
+    margin-left:-25%;
+    width: calc(100%+11%);
+    height: 100%;
+    overflow: scroll;
+    background-color:black;
+}
+}

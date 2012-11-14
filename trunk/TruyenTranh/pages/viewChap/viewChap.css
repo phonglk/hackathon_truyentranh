@@ -1,56 +1,89 @@
 ﻿.my-header {
-    position:fixed;
-    top:0;
+    position: fixed;
+    top: 0;
 }
-.chapter-container {
-    width:90%;
-    height:100%;
-    position:relative;
-    overflow:scroll;
+.view-chap-back-button-container {
+    height: 60px !important;
 }
-.left-side,
-.right-side{
-    width:80%; margin:auto;
-    
-}
-.right-side {
-    
+.view-chap-win-backbutton {
+    margin-top: 10px;
 }
 
-.left-side img,
-.right-side img{
-    width:100%;
-    padding:0;
-    margin:0px 0px 10px 0px;
-    z-index:99999;
+.view-chap-title {
+    position:relative;
+    height: 30px;
+    padding: 20px 0px 10px 10px;
+    margin: 0px 0px 0px 0px;
 }
+
+    .view-chap-title h1 {
+        font-size:20px;
+        width:30%;
+        float:left;
+    }
+    .view-chap-title .view-chap-chapter-list {
+    position:relative; float:right;
+    height: 20px; width:15%;
+    margin: 0px 0px 0px 0px;
+    background-color:white;
+    color:black;
+}
+        .view-chap-title .view-chap-chapter-list:active {
+            background-color:white !important;
+        }
+
+.chapter-container {
+    clear:both;
+    margin-left:-11%;
+    width: calc(100%+11%);
+    height: 100%;
+    overflow: scroll;
+    background-color:black;
+}
+    .chapter-container img {
+        width:100%;
+    }
+
+/*
+.left-side,
+.right-side {
+    width: 80%;
+    margin: auto;
+}
+
+.right-side {
+}
+
+    .left-side img,
+    .right-side img {
+        width: 100%;
+        padding: 0;
+        margin: 0px 0px 10px 0px;
+        z-index: 99999;
+    }
+*/
+
 .back-page, .next-page {
-    position:fixed;
-    bottom:40%;
-    
-}
-.back-page:hover, .next-page:hover {
-    cursor:pointer;
+    position:relative;
+    float:right;
+    border:none; padding:5px;
+    height:25px; width:15px !important;
 }
 .back-page {
-    left:12%;
+    margin: 0px 10px 0px 0px;
 }
 .next-page {
-    right:11%;
+    margin: 0px 50px 0px 10px;
 }
-.chapter-container button {
-    padding:5px;
-    border:none;
-    transition:all 0.4s;
-    display:none;
+.back-page {
+    -ms-transform: rotate(180deg);
 }
-.chapter-container button:hover {
-    background-color:rgba(0, 0, 0, 0.2);
-    transition:all 0.4s;
-}
-.chapter-container button img {
-    height:80px;
-}
-.back-page{
-    -ms-transform:rotate(180deg);
-}
+
+    .back-page:hover, .next-page:hover {
+        cursor: pointer;
+        background-color:black;
+        border-radius:4px;
+        transition:all 0.3s;
+    }
+
+

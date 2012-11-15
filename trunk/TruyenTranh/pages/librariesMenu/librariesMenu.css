@@ -35,17 +35,23 @@ button.webname {
     border: none;
 }
 
-.webname:checked {
-    padding-left: 40px !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-}
 
 .webname:active {
     color: white !important;
-    background-color: #073e65 !important;
+        background-color: #073e65 !important;
 }
-
+.body-logo {
+    position:absolute;
+    right:10%; bottom:0; margin:0px;
+    width:310px; height:500px;
+    border:none;
+}
+    .body-logo img {
+        width:100%;
+        border:none;
+        margin:0px;
+        display:block;
+    }
 
 
 /* */
@@ -95,6 +101,9 @@ button.webname {
         color: white !important;
         background-color: #073e65 !important;
     }
+    .body-logo {
+    display:none !important;
+}
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {

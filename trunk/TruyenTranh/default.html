@@ -15,7 +15,7 @@
     <script src="/js/jquery-1.8.2.js"></script>
     <script src="/js/truyen.js"></script>
     <script src="/js/listweb.js"></script>
-    <script src="/js/appbarutils.js"></script>
+
     <script src="/js/navigator.js"></script>
     <script src="/js/default.js"></script>
 </head>
@@ -25,14 +25,16 @@
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Command', icon:'placeholder'}" type="button"></button>
     </div> -->
     <!-- App bar -->
-<!--    <div id="appbar" data-win-control="WinJS.UI.AppBar" aria-label="Command Bar" data-win-options="{
+    <div id="appbar" data-win-control="WinJS.UI.AppBar" aria-label="Command Bar" data-win-options="{
         commands:[
             {id:'main', label:'Menu', icon:'&#xE10F;', section: 'global'},
             {id:'library', label:'Thư viện', icon:'library', section: 'global'},
             {id:'find', label:'Tìm Kiếm', icon:'find', section: 'global'},
             {id:'favorite', label:'Yêu thích', icon:'&#9825;', section: 'global'},
             {id:'credits', label:'Thông tin', icon:'&#xE10C;', section: 'global'},
-            {id:'bookmark', label:'Bookmarks', icon:'&#xE113;', section: 'global'}
-        ]}"></div>-->
+            {id:'bookmark', label:'Bookmarks', icon:'&#xE113;', section: 'global'},
+            {id:'addbookmark', label:'Thêm bookmark', icon:'add', section: 'selection'},
+            {id:'addfavorite', label:'Thêm yêu thích', icon:'add', section: 'selection'}
+        ]}"></div>
 </body>
 </html>

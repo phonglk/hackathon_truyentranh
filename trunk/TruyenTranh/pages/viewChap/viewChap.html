@@ -12,6 +12,13 @@
     <link href="/pages/viewChap/viewChap.css" rel="stylesheet" />
     <script src="/js/Data.js"></script>
     <script src="/pages/viewChap/viewChap.js"></script>
+
+    <!-- Close adv bar -->
+    <script type="text/javascript">
+        $(".view-chap-adv-close-btn").click(function () {
+            $('.view-chap-adv').hide();
+        });
+    </script>
 </head>
 <body>
     <div class="left-wrapper">
@@ -26,23 +33,23 @@
         <div class="header-title view-chap-title">
             <h1></h1>
 
-                <img class="next-page" src="../../images/right-arrow.png" />
-            
-            <select class="view-chap-chapter-list">
+            <img class="next-page" src="../../images/right-arrow.png" />
+
+            <select class="view-chap-chapter-list" >
                 <option value="1">Chapter 1</option>
                 <option value="2">Chapter 2</option>
                 <option value="3">Chapter 3</option>
                 <option value="4">Chapter 4</option>
             </select>
 
-                <img class="back-page" src="../../images/right-arrow.png" />
-            
+            <img class="back-page" src="../../images/right-arrow.png" />
+
         </div>
 
 
         <div class="chapter-container">
-            
-            
+
+
             <!--<div class="left-side">
                     <img src="" />
             </div>
@@ -50,6 +57,15 @@
                     <img src="" />
             </div>-->
         </div>
+    </div>
+    <div class="view-chap-adv">
+        <button class="view-chap-adv-close-btn">Đóng</button>
+            <img src="../../images/main-menu-logo.png" />
+        <img src="../../images/main-menu-logo.png" />
+        <img src="../../images/main-menu-logo.png" />
+        <img src="../../images/main-menu-logo.png" />
+        <img src="../../images/main-menu-logo.png" />
+        <img src="../../images/main-menu-logo.png" />
     </div>
 </body>
 </html>

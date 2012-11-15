@@ -45,10 +45,6 @@
             listView.itemDataSource = Data.groups.dataSource;
             listView.groupDataSource = null;
             listView.layout = new ui.ListLayout();
-        } else {
-            //listView.itemDataSource = Data.items.dataSource;
-            //listView.groupDataSource = Data.groups.dataSource;
-            listView.layout = new ui.GridLayout({ groupHeaderPosition: "left" });
         }
     }
 

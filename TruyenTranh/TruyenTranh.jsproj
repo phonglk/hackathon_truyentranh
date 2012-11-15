@@ -58,6 +58,7 @@
     <Content Include="css\main.css" />
     <Content Include="images\back-button.png" />
     <Content Include="images\background.png" />
+    <Content Include="images\body-logo.png" />
     <Content Include="images\right-arrow.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\main-menu-logo.png" />

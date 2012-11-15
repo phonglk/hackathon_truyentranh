@@ -104,6 +104,28 @@
 
 
 @media screen and (-ms-view-state: snapped) {
+    .list-story-container {
+    clear:both;
+    margin-left:-30%;
+    width: calc(100%+40%);
+    height:calc(100% - 120px);
+    background-color:black;
+}
+    .groupeditemspage {
+    position:relative;
+    height:100%;
+    width: calc(100%+30%);
+}
+
+    .groupeditemspage .groupeditemslist {
+        position:relative;
+        height:calc(100%-120px);
+    }
+    .groupeditemspage .groupeditemslist .item {
+            height: 150px;
+            width: 90%;
+            background-color: orange !important;
+        }
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {

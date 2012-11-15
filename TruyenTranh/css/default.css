@@ -2,9 +2,9 @@
     height: 100%;
     width: 100%;
 }
-/*.add-button {
+.add-button {
     visibility: hidden;
-}*/
+}
 .fragment {
     /* Define a grid with rows for a banner and a body */
     -ms-grid-columns: 1fr;

@@ -7,10 +7,6 @@
     var ui = WinJS.UI;
     var listView;
     var optionsParameter;
-    var mainUrl = "/pages/mainMenu/mainMenu.html";
-    var libUrl  = "/pages/groupedItems/groupedItems.html";
-    var findUrl = "/pages/findPage/findPage.html";
-    var favoriteUrl = "/pages/favorite/favorite.html";
 
     function LoadComicInfo(comic) {
         $(".item-image").attr("src", comic.image);
@@ -36,10 +32,10 @@
         }
     }
 
-    //function unload() {
-    //    WinJS.Utilities.addClass(document.getElementById("addfavorite"), "add-button");
-    //    WinJS.Utilities.addClass(document.getElementById("addbookmark"), "add-button");
-    //}
+    function unload() {
+        WinJS.Utilities.addClass(document.getElementById("addfavorite"), "add-button");
+        WinJS.Utilities.addClass(document.getElementById("addbookmark"), "add-button");
+    }
     function  initializeLayout(listView, viewState) {
         /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
@@ -55,12 +51,8 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            document.getElementById("addfavorite").addEventListener("click", doClickAddFavorite, false);
-            document.getElementById("myfavorite").addEventListener("click", doClickMyFavorite, false);
-            document.getElementById("home").addEventListener("click", doClickHome, false);
-            document.getElementById("listcomic").addEventListener("click", doClickListComic, false);
-            document.getElementById("search").addEventListener("click", doClickSearch, false);
-
+            WinJS.Utilities.removeClass(document.getElementById("addfavorite"), "add-button");
+            WinJS.Utilities.removeClass(document.getElementById("addbookmark"), "add-button");
             $(".content").focus()
             optionsParameter = options;
             listView = $(".chapterslist")[0].winControl;
@@ -81,6 +73,9 @@
             //element.querySelector("article .item-content").innerHTML = item.content;
             //element.querySelector(".content").focus();
         },
+
+        
+        
         // This function updates the page layout in response to viewState changes.
         updateLayout: function (element, viewState, lastViewState) {
             /// <param name="element" domElement="true" />
@@ -106,48 +101,10 @@
         // This function updates the ListView with new layouts
         
 
-        unload: function () {
-            
-            AppBarUtils.removeAppBars();
-        }
+        unload: unload
     });
 
-    function doClickAddFavorite() {
-
-            //document.getElementById("localizedAppBar").winControl.hide();
-    }
-
-    function doClickMyFavorite() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== favoriteUrl) {
-            WinJS.Navigation.navigate(favoriteUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
-
-    function doClickHome() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== mainUrl) {
-            WinJS.Navigation.navigate(mainUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
-
-    function doClickListComic() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== libUrl) {
-            WinJS.Navigation.navigate(libUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
-
-    function doClickSearch() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== findUrl) {
-            WinJS.Navigation.navigate(findUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
+    
     //WinJS.Namespace.define("itemDetail", {
     //    enableAppBarAppButtons: enableAppBarAppButtons,
     //    disableAppBarAppButtons: disableAppBarAppButtons

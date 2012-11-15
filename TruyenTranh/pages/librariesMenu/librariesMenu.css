@@ -53,28 +53,25 @@ button.webname {
 @media screen and (-ms-view-state: snapped) {
     .list-website-container {
         position:relative;
-        margin-left:calc(-30%);
-        width: calc(100% + 30%);
+        margin-left:calc(-40%);
+        width: calc(100% + 40%);
         height:calc(100% - 120px);
-        
+        overflow:hidden;
     }
 
     .list-website-control {
         position: relative;
         height: 100%;
         width: 100%;
-    }
-    .list-website-control div div {
-    background-color:blue;
+        overflow:hidden;
     }
     button.webname {
-        width: 300px;
+        width: 300px; height:100%;
     font-size: 20px;
     text-align: left;
     font-weight: 100;
-    padding:20px;
+    padding:23px 20px 23px 20px;
     background-color: #0094ff !important;
-    border: none;
     
     overflow:hidden;
     }

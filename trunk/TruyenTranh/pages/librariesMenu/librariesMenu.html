@@ -19,21 +19,24 @@
 
     <div class="right-wrapper">
         <div class="header-title">
-            <h1>
-                Danh Sách Các Thư Viện
+            <h1>Danh Sách Các Thư Viện
             </h1>
         </div>
 
         <div class="list-website-container">
             <!-- Template -->
-            <div id="listWebTemplate" style="height:100%; width:100%; background-color:white;" data-win-control="WinJS.Binding.Template" >   
-                    <button class="webname" data-win-bind="innerText: name"></button>
+            <div id="listWebTemplate" style="height: 100%; width: 100%; background-color: white;" data-win-control="WinJS.Binding.Template">
+                <button class="webname" data-win-bind="innerText: name"></button>
+
             </div>
 
             <div class="list-website-control" data-win-control="WinJS.UI.ListView"
                 data-win-options="{itemTemplate: select('#listWebTemplate')}">
             </div>
         </div>
+        <div class="body-logo">
+                <img src="../../images/body-logo.png" />
+            </div>
     </div>
 </body>
 </html>

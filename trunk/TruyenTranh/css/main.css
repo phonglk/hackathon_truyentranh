@@ -3,10 +3,6 @@ body {
     background-color: #0094ff;
     padding: 0px;
     margin: 0px;
-    /*background-image: url(../images/background.png);
-    background-repeat: repeat-x;
-    background-position: bottom;
-    background-size: 30px;*/
 }
 
 .left-wrapper {
@@ -17,20 +13,33 @@ body {
     float: left;
 }
 
-#back-button-container {
+.back-button-container {
+    position:relative;
     width: 100%;
     height: 120px;
-    background-color: #0c314d;
-    border-bottom: 8px solid rgb(97, 36, 252);
+    color: black;
+    background-color: white; /*#0c314d;*/
+    border-bottom: 5px solid rgb(255, 106, 0);
+    box-shadow:-3px 4px 4px black;
+    z-index:3;
 }
 
 .win-backbutton {
     margin-left: 50%;
     margin-top: 40px;
+    color: black;
+    border-color: black;
 }
 
     .win-backbutton:hover {
         cursor: pointer;
+        color: #808080;
+        border-color: #808080;
+    }
+    .win-backbutton:active {
+        cursor: pointer;
+        color: #CCC !important;
+        border-color: #CCC  !important;
     }
 
 
@@ -44,12 +53,11 @@ body {
 .header-title {
     position: relative;
     display: block;
-    width: 100%;
-    height: 80px;
-    padding: 30px 0px 10px 10px;
-    margin: 0px 0px 20px 0px;
-    background-color: #0c314d;
-    border-bottom: 8px solid rgb(97, 36, 252);
+    width: 100%; height: 80px;  padding: 30px 0px 10px 10px;  margin: 0px 0px 20px 0px;
+    color: black; background-color: white;
+    border-bottom: 5px solid rgb(255, 106, 0);
+    box-shadow:-4px 4px 4px black;
+    z-index:2;
 }
 
     .header-title h1 {
@@ -73,11 +81,15 @@ body {
         width: 80%;
         float: left;
     }
+    .header-title {
+    padding: 40px 0px 0px 10px;
+}
 
     .header-title h1 {
         font-size: 30px;
     }
 }
+
 @media screen and (-ms-view-state: snapped) {
     .left-wrapper {
         position: relative;

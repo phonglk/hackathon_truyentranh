@@ -15,14 +15,17 @@
 
     <!-- Close adv bar -->
     <script type="text/javascript">
-        $(".view-chap-adv-close-btn").click(function () {
-            $('.view-chap-adv').hide();
-        });
+        function fullScreenRead(container) {
+            document.getElementsByClassName(container)[0].setAttribute("width", '100%');
+        };
+        function closeAdv(element) {
+            document.getElementsByClassName(element)[0].style.display = 'none';
+        }
     </script>
 </head>
 <body>
     <div class="left-wrapper">
-        <div id="back-button-container" class="view-chap-back-button-container">
+        <div id="back-button-container" class="back-button-container view-chap-back-button-container">
             <button class="win-backbutton view-chap-win-backbutton" aria-label="Back" disabled></button>
         </div>
     </div>
@@ -30,7 +33,7 @@
 
     <div class="right-wrapper">
 
-        <div class="header-title view-chap-title">
+        <div class="header-title view-chap-header-title">
             <h1></h1>
 
             <img class="next-page" src="../../images/right-arrow.png" />
@@ -43,12 +46,12 @@
             </select>
 
             <img class="back-page" src="../../images/right-arrow.png" />
-
+            <button class="full-screen-btn" onclick="fullScreenRead('story-image');"></button>
         </div>
 
 
         <div class="chapter-container">
-
+            
 
             <!--<div class="left-side">
                     <img src="" />
@@ -59,7 +62,7 @@
         </div>
     </div>
     <div class="view-chap-adv">
-        <button class="view-chap-adv-close-btn">Đóng</button>
+        <button class="view-chap-adv-close-btn" onclick="closeAdv('view-chap-adv');">Đóng</button>
             <img src="../../images/main-menu-logo.png" />
         <img src="../../images/main-menu-logo.png" />
         <img src="../../images/main-menu-logo.png" />

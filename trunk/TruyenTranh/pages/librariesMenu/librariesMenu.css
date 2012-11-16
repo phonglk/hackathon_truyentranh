@@ -1,4 +1,8 @@
-﻿
+﻿#body {
+    background-image: url(../images/Max-BG2-sm.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 
 /* LIBRARIES STYLE */
 
@@ -20,8 +24,8 @@ button.webname {
     font-size: 25px;
     text-align: left;
     font-weight: 100;
-    padding: 20px;
-    background-color: #0094ff !important;
+    padding: 20px; /*color:#0094ff;*/
+    background-color:#0094ff !important; /*white !important;*/
     border: none;
     transition: padding 0.8s, text-transform 0.8s;
 }

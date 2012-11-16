@@ -59,6 +59,8 @@
     <Content Include="images\back-button.png" />
     <Content Include="images\background.png" />
     <Content Include="images\body-logo.png" />
+    <Content Include="images\full-screen-icon.png" />
+    <Content Include="images\Max-BG2-sm.jpg" />
     <Content Include="images\right-arrow.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\main-menu-logo.png" />

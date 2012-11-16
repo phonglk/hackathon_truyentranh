@@ -13,7 +13,7 @@
     function LoadChapter(chapter) {
         currentChapter = chapter;
         $(".header-title h1").text(chapter.name);
-        var tmp = '<div class="left-side"><img src="@src" /></div>'
+        var tmp = '<div class="left-side"><img class="story-image" src="@src" /></div>'
         var container = $(".chapter-container");
         for (var i = 0; i < chapter.pages.pageList.length; i++) {
             var page = chapter.pages.pageList[i];

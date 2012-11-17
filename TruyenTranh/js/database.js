@@ -157,13 +157,24 @@
             };
 
             //delete bookmark
-            var deleteResult = txn.objectStore("bookmark").get(key.chapter);
+            var deleteResult = txn.objectStore("bookmark").openCursor();
 
             deleteResult.onerror = function (evt) {
                 Windows.UI.Popups.MessageDialog("Delete data error").showAsync()
             }
+
+            deleteResult.onsuccess = function (evt) {
+                var cursor = evt.target.result;
+                if (cursor) {
+                    if (cursor.value["chapter"] == key.chapter && cursor.value["page"] == key.page) {
+                        cursor.delete();
+                    }
+                    cursor.continue();
+                }
+            }
         };
     }
+
 
     WinJS.Namespace.define("Database", {
         bookmark: bookmark,

@@ -32,10 +32,10 @@
     function GetPage(idx) {
         var thisBookMark = $(".bookmarkTag:eq(" + idx + ")");
         if (!thisBookMark.hasClass("bookmarkedTag")) {
-            //Database.writeBookMark(comic.name, comic.url, comic.image, chapter.name, idx);
-            Database.deleteBookMark({chapter:chapter.name,page:idx});
+            Database.writeBookMark(comic.name, comic.url, comic.image, chapter.name, idx);
             thisBookMark.addClass("bookmarkedTag");
         } else {
+            Database.deleteBookMark({ chapter: chapter.name, page: idx });
             thisBookMark.removeClass("bookmarkedTag");
         }
     }

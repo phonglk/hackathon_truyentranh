@@ -137,7 +137,7 @@
             this.sort = function () {
                 for (var i = 0; i < this.pageList.length - 1; i++) {
                     for (var j = i + 1; j < this.pageList.length; j++) {
-                        if (this.pageList[j] < this.pageList[i]) {
+                        if (this.pageList[j].url < this.pageList[i].url) {
                             var tmp = this.pageList[j];
                             this.pageList[j] = this.pageList[i];
                             this.pageList[i] = tmp;

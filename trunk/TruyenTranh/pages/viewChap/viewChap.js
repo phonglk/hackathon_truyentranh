@@ -136,6 +136,7 @@
                 document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
 
                 var ComicName = options.ComicName;
+                var img = options.img;
                 var website = WebSites.webs[options.WebsiteIdx];
                 comic = website.listComics.getById(options.ComicIdx);
                 chapter = comic.chapters.getById(options.ChapIdx);

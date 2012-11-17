@@ -5,7 +5,7 @@
     WinJS.Binding.optimizeBindingReferences = true;
 
     var mainUrl = "/pages/mainMenu/mainMenu.html";
-    var libUrl = "/pages/groupedItems/groupedItems.html";
+    var libUrl = "/pages/librariesMenu/librariesMenu.html";
     var findUrl = "/pages/findPage/findPage.html";
     var favoriteUrl = "/pages/favorite/favorite.html";
     //var bookmarkUrl = "/pages/bookmark/bookmark.html";

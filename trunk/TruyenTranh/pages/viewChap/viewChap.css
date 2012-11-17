@@ -124,7 +124,7 @@
     position:absolute;
     top: -5px;
     right:30px;
-    height: 150px;
+    height: 120px;
     width: 61px;
     background-image: url("/images/bookmark.png");
     background-size:cover;
@@ -138,7 +138,10 @@
     background-image: url("/images/bookmarked.png");
     transition:all 0.3s;
 }
-
+.bookmarkedTag:hover {
+        cursor:pointer;
+        background-image: url("/images/bookmark.png");
+    }
 .view-chap-adv {
     position: fixed;
     margin:auto;

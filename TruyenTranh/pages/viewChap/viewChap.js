@@ -9,13 +9,15 @@
     var optionsParameter;
     var currentChapter = null;
     var lastDir = "next"
-    var comic, chapter;
+    var comic, chapter,pages;
 
     function LoadChapter(chapter) {
         currentChapter = chapter;
         $(".header-title h1").text(chapter.name);
         var tmp = '<div class="left-side"><img src="@src" /></div>'
         var container = $(".chapter-container");
+        pages = chapter.pages
+        pages.sort()
         for (var i = 0; i < chapter.pages.pageList.length; i++) {
             var page = chapter.pages.pageList[i];
             var $page = $(tmp.replace("@src", page.url));
@@ -101,16 +103,33 @@
         msg.showAsync();
     }
 
+
+    function addBookMarkInPage() {
+        var pagesTmp = pages.pageList;
+        Database.getBookMark(function (bookmark) {
+            for (var i = 0; i < bookmark.length; i++) {
+                for(var j = 0;j<pagesTmp.length;j++){
+                    if (bookmark[i]["chapter"] == chapter.name && bookmark[i]["page"] == j) {
+                        var thisBookMarkTmp = $(".bookmarkTag:eq(" + j + ")");
+                        thisBookMarkTmp.addClass("bookmarkedTag");
+                    }
+                }
+            }
+        });
+    }
+
+
     WinJS.UI.Pages.define("/pages/viewChap/viewChap.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            WinJS.Utilities.removeClass(document.getElementById("addbookmark"), "add-button");
             optionsParameter = options;
+
             try{
                 var website = WebSites.webs[options.WebsiteIdx];
-                var comic = website.listComics.getById(options.ComicIdx);
-                var chapter = comic.chapters.getById(options.ChapIdx);
+                comic = website.listComics.getById(options.ComicIdx);
+                chapter = comic.chapters.getById(options.ChapIdx);
+                pages = chapter.pages
                 if (chapter.isLoaded == false) {
                     website.getChapter(chapter, LoadChapter)
                 } else {
@@ -126,7 +145,6 @@
                     website.getChapterByURL(url, LoadChapter)
                 }
             }
-           
             //$(".back-list").bind("click", function () {
             //    nav.navigate("/pages/itemDetail/itemDetail.html",
             //        {
@@ -169,6 +187,6 @@
     });
 
     function unload() {
-        WinJS.Utilities.addClass(document.getElementById("addbookmark"), "add-button");
+        
     }
 })();

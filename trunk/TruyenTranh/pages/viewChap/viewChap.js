@@ -123,7 +123,12 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            WinJS.Utilities.removeClass(document.getElementById("addbookmark"), "add-button");
+
+            document.getElementById("myfavorite").addEventListener("click", TruyenManager.doClickMyFavorite, false);
+            document.getElementById("home").addEventListener("click", TruyenManager.doClickHome, false);
+            document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
+            document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
+
             optionsParameter = options;
             var website = WebSites.webs[options.WebsiteIdx];
             comic = website.listComics.getById(options.ComicIdx);
@@ -174,12 +179,11 @@
 
             //EventBinding();
         },
-        unload: unload
+        unload: function () {
+            AppBarUtils.removeAppBars();
+        }
     });
 
-    function unload() {
-        WinJS.Utilities.addClass(document.getElementById("addbookmark"), "add-button");
-    }
         //document.getElementById("localizedAppBar").winControl.hide();
     }
 

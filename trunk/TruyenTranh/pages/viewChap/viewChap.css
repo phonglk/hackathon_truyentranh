@@ -67,16 +67,21 @@
 
     .back-page:hover, .next-page:hover {
         cursor: pointer;
-        background-color: black;
+        background-color: rgba(255, 255, 255, 0.3);
         border-radius: 4px;
         transition: all 0.3s;
     }
 
-.full-screen {
-    position:relative; float:right; border:white;
-    background-image:url(../images/full-screen-icon.png);
-    background-repeat:no-repeat;
-    background-size:contain;
+.full-screen-btn {
+    position:relative; float:right; border:none;
+    width:30px !important; 
+    padding:2px 5px 2px 5px; margin:0px 10px 10px 0px;
+}
+.full-screen-btn:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        transition: all 0.3s;
 }
 
 .chapter-container {

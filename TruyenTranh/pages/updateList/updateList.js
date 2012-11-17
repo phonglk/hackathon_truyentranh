@@ -28,7 +28,7 @@
 
     function EventBinding() {
         listView.oniteminvoked = function (e) {
-            nav.navigate("/pages/viewChap/viewChap.html", { url: e.detail.itemPromise._value.data["url"], ChapIdx: e.detail.itemPromise._value.data["chapter"] })
+            nav.navigate("/pages/viewChap/viewChap.html", { url: e.detail.itemPromise._value.data["url"], ChapIdx: e.detail.itemPromise._value.data["chapter"], ComicName: e.detail.itemPromise._value.data["name"], img: e.detail.itemPromise._value.data["backgroundImage"] })
         }
     }
 

@@ -187,9 +187,29 @@
     }
 }
 
-.win-medium {
+
+progress.withText
+{
+    color: black; /* Uses the same text color as the page */
+    vertical-align: text-bottom; /* Makes the bottom of the control align with the bottom of its label */
+}
+
+/* Text style for a label for the progress ring */
+.progressRingText
+{
+    font-family: "Segoe UI";
     position:fixed;
     left:50%;
     bottom:50%;
-    color: black !important;
+    font-size: 20pt;
+    line-height: 20pt;
+}
+
+/* The margin to separate the ring and its label */
+.progressRingText span
+{
+    display:block;
+    margin-left: -10px;
+    color: black;
+    font-size: 12pt;
 }

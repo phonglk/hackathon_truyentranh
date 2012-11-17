@@ -37,7 +37,7 @@
             element.querySelector(".right-wrapper").focus();
             
             listView.oniteminvoked = function (e) {
-                WinJS.Navigation.navigate("/pages/groupedItems/groupedItems.html", { idx: e.detail.itemPromise._value.data["idx"] });
+                WinJS.Navigation.navigate("/pages/updateList/updateList.html", { idx: e.detail.itemPromise._value.data["idx"] });
             }
             //setTimeout(function () {
             //    listView.itemDataSource.insertAfter(null, { name: "test", url: "test" },"2")

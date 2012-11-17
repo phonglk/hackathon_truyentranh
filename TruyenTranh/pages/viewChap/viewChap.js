@@ -26,6 +26,9 @@
             })(i)
             container.append($page);
         }
+        $(".story-image").bind("load",function(evt){
+            var a = evt;
+        })
         container.scrollTop(chapter.scrollTopOffset);
         addBookMarkInPage();
         EventBinding();
@@ -132,7 +135,7 @@
                 document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
                 document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
 
-                
+                var ComicName = options.ComicName;
                 var website = WebSites.webs[options.WebsiteIdx];
                 comic = website.listComics.getById(options.ComicIdx);
                 chapter = comic.chapters.getById(options.ChapIdx);

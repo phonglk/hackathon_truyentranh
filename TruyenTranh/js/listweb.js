@@ -1,10 +1,11 @@
-﻿(function () {
+﻿var truyentranhtuan;
+(function () {
     "use strict";
 
     var listweb = new Array();
 
     var blogtruyen = new webTruyen("Blog Truyện", "blogtruyen.com", "");
-    var truyentranhtuan = new webTruyen("Truyện Tranh Tuần", "truyentranhtuan.com", "");
+    truyentranhtuan = new webTruyen("Truyện Tranh Tuần", "truyentranhtuan.com", "");
     var vnsharing =  new webTruyen("VnSharing", "vnsharing.com", "");
     var webtruyen = new webTruyen("Web Truyện", "webtruyen.com", "");
     var mangafox = new webTruyen("MangaFox", "mangafox.me", "");
@@ -38,8 +39,10 @@
             },
             TruyenTranhTuan: {
                 listComic: "http://truyentranhtuan.com/danh-sach-truyen/",
+                listUpdateComic: "http://truyentranhtuan.com/moi-cap-nhat/1",
                 listChapter: "http://truyentranhtuan.com/@name/",
-                chapterLink: "http://truyentranhtuan.com/@name/@chap/"
+                chapterLink: "http://truyentranhtuan.com/@name/@chap/",
+                root:"http://truyentranhtuan.com"
             }
         }
     }
@@ -194,6 +197,45 @@
             }).done(onSuccess, onError)
         }
     }
+    truyentranhtuan.getUpdateListComics = function (callback) {
+        var url = urls_using.TruyenTranhTuan.listUpdateComic;
+        truyentranhtuan.listComics.comicList = new Array();
+        function onSuccess(xhr) {
+            var html = xhr.responseText;
+            var $site = $(html);
+            var that = this;
+            $site.find(".ch-table tr[class]").each(function () {
+                var $this = $(this);
+                var name = $this.find("a").text();
+                var chapter = parseInt(name.match(/\d+$/));
+                name = name.match(/(.*)\d+$/)[1];
+                var url = urls_using.TruyenTranhTuan.root + $this.find("a").attr("href");
+                var comic = {
+                    name: name,
+                    url: url,
+                    image: $this.find("img").attr("src"),
+                    chapter:chapter
+                }
+
+                if (mode == "test") {
+                    var name = comic.url.match(/com\/(.*)\//)[1];
+                    comic.url = urls_using.TruyenTranhTuan.listChapter.replace(/@name/g, name);
+                }
+
+                var _rtn = truyentranhtuan.listComics.add("", comic)
+                _rtn.chapter = chapter;
+            })
+            callback.call(truyentranhtuan);
+        }
+
+        function onError() {
+
+        }
+
+        WinJS.xhr({
+            url: url
+        }).done(onSuccess, onError);
+    }
     truyentranhtuan.getChapter = function (chapter, callback) {
         function onSuccess(xhr) {
             var html = xhr.responseText;
@@ -223,6 +265,34 @@
             url: chapter.url
         }).done(onSuccess, onError);
     }
+    truyentranhtuan.getChapterByURL = function (url, callback) {
+        function onSuccess(xhr) {
+            var html = xhr.responseText;
+            var selectedText = xhr.responseText.match(/slides2=\[[^\]]*\]/)[0];
+            var _pages = selectedText.match(/"[^"]+"/g);
+            var chapter = {}
+            chapter.pages = new ListPage();
+            
+            for (var i = 0; i < _pages.length; i++) {
+                var page = _pages[i].replace(/"/g, "");
+                page = "http://truyentranhtuan.com" + page;
+                chapter.pages.add({
+                    url: page
+                })
+            }
+            chapter.isLoaded = true;
+            callback.call(this, chapter);
+        }
+        
+        function onError() {
+            chapter.isLoaded = true;
+        }
+
+        WinJS.xhr({
+            url: url
+        }).done(onSuccess, onError);
+    }
+
     truyentranhtuan.Comic_loadImage = function (listView) {
         var url = this.url;
         var name = this.name;

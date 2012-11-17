@@ -61,10 +61,12 @@
             optionsParameter = options;
             listView = $(".chapterslist")[0].winControl;
             var comic = WebSites.webs[options.WebsiteIdx].listComics.getById(options.ComicIdx);
-            var website = WebSites.webs[options.WebsiteIdx];
-
-            website.getListChapter(comic.name, LoadComicInfo);
-
+            if (comic == false) {
+                debugger;
+            } else {
+                var website = WebSites.webs[options.WebsiteIdx];
+                website.getListChapter(comic.name, LoadComicInfo);
+            }
             listView.layout = new WinJS.UI.ListLayout();
 
             EventBinding();

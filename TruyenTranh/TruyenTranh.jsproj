@@ -60,7 +60,6 @@
     <Content Include="images\background.png" />
     <Content Include="images\body-logo.png" />
     <Content Include="images\full-screen-icon.png" />
-    <Content Include="images\Max-BG2-sm.jpg" />
     <Content Include="images\right-arrow.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\main-menu-logo.png" />
@@ -68,7 +67,9 @@
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
     <Content Include="images\widelogo.png" />
+    <Content Include="js\appbarutils.js" />
     <Content Include="js\BookmarkModel.js" />
+    <Content Include="js\database.js" />
     <Content Include="js\default.js" />
     <Content Include="js\jquery-1.8.2.js" />
     <Content Include="js\listweb.js" />
@@ -99,6 +100,9 @@
     <Content Include="pages\mainMenu\main-menu.css" />
     <Content Include="pages\mainMenu\mainMenu.html" />
     <Content Include="pages\mainMenu\mainMenu.js" />
+    <Content Include="pages\updateList\updateList.css" />
+    <Content Include="pages\updateList\updateList.html" />
+    <Content Include="pages\updateList\updateList.js" />
     <Content Include="pages\viewChap\viewChap.css" />
     <Content Include="pages\viewChap\viewChap.html" />
     <Content Include="pages\viewChap\viewChap.js" />

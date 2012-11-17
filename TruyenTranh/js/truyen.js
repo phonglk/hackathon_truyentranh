@@ -1,4 +1,4 @@
-﻿var webTruyen, __hasProp, __extends, listComic;
+﻿var webTruyen,ListPage, __hasProp, __extends, listComic;
 (function () {
     "use strict";
     __hasProp = {}.hasOwnProperty,
@@ -22,6 +22,8 @@
         }
 
         webTruyen.prototype.getListComics = function () { };
+
+        webTruyen.prototype.getUpdateListComics = function () { };
 
         webTruyen.prototype.getListChapter = function (comicName) { };
 
@@ -47,6 +49,7 @@
             }
             this.rawList[cat][comic.name] = comic
             this.comicList.push(comic);
+            return comic;
         }
         this.get = function (comicName) {
             for (var i = 0; i < this.comicList.length; i++) {
@@ -122,15 +125,29 @@
         this.pages = new ListPage();
     }
 
-    function ListPage() {
-        this.rawList = new Array();
-        this.pageList = new Array();
+    ListPage =(function(){
+        function ListPage() {
+            this.rawList = new Array();
+            this.pageList = new Array();
 
-        this.add = function (pageOpt) {
-            var page = new Page(pageOpt);
-            this.pageList.push(page);
+            this.add = function (pageOpt) {
+                var page = new Page(pageOpt);
+                this.pageList.push(page);
+            }
+            this.sort = function () {
+                for (var i = 0; i < this.pageList.length - 1; i++) {
+                    for (var j = i + 1; j < this.pageList.length; j++) {
+                        if (this.pageList[j] < this.pageList[i]) {
+                            var tmp = this.pageList[j];
+                            this.pageList[j] = this.pageList[i];
+                            this.pageList[i] = tmp;
+                        }
+                    }
+                }
+            }
         }
-    }
+        return ListPage;
+    })()
 
     function Page(opt) {
         this.url = opt.url;

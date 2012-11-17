@@ -7,10 +7,6 @@
     var ui = WinJS.UI;
     var listView;
     var optionsParameter;
-    var mainUrl = "/pages/mainMenu/mainMenu.html";
-    var libUrl  = "/pages/groupedItems/groupedItems.html";
-    var findUrl = "/pages/findPage/findPage.html";
-    var favoriteUrl = "/pages/favorite/favorite.html";
 
     function LoadComicInfo(comic) {
         $(".item-image").attr("src", comic.image);
@@ -56,10 +52,10 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             document.getElementById("addfavorite").addEventListener("click", doClickAddFavorite, false);
-            document.getElementById("myfavorite").addEventListener("click", doClickMyFavorite, false);
-            document.getElementById("home").addEventListener("click", doClickHome, false);
-            document.getElementById("listcomic").addEventListener("click", doClickListComic, false);
-            document.getElementById("find").addEventListener("click", doClickSearch, false);
+            document.getElementById("myfavorite").addEventListener("click", TruyenManager.doClickMyFavorite, false);
+            document.getElementById("home").addEventListener("click", TruyenManager.doClickHome, false);
+            document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
+            document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
 
             $(".content").focus()
             optionsParameter = options;
@@ -113,37 +109,6 @@
             //document.getElementById("localizedAppBar").winControl.hide();
     }
 
-    function doClickMyFavorite() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== favoriteUrl) {
-            WinJS.Navigation.navigate(favoriteUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
-
-    function doClickHome() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== mainUrl) {
-            WinJS.Navigation.navigate(mainUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
-
-    function doClickListComic() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== libUrl) {
-            WinJS.Navigation.navigate(libUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
-
-    function doClickSearch() {
-        var loc = WinJS.Navigation.location;
-        if (loc !== "" && loc !== findUrl) {
-            WinJS.Navigation.navigate(findUrl);
-            //document.getElementById("localizedAppBar").winControl.hide();
-        }
-    }
     //WinJS.Namespace.define("itemDetail", {
     //    enableAppBarAppButtons: enableAppBarAppButtons,
     //    disableAppBarAppButtons: disableAppBarAppButtons

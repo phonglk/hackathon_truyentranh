@@ -9,20 +9,37 @@
     var optionsParameter;
     var currentChapter = null;
     var lastDir = "next"
+    var comic,chapter;
 
     function LoadChapter(chapter) {
         currentChapter = chapter;
         $(".header-title h1").text(chapter.name);
-        var tmp = '<div class="left-side"><img class="story-image" src="@src" /></div>'
+        var tmp = '<div class="left-side"><div class="bookmarkTag"></div><img src="@src" /></div>'
         var container = $(".chapter-container");
         for (var i = 0; i < chapter.pages.pageList.length; i++) {
             var page = chapter.pages.pageList[i];
             var $page = $(tmp.replace("@src", page.url));
+            (function(i){
+                $page.find(".bookmarkTag").bind("click", function () { GetPage(i) });
+            })(i)
             container.append($page);
         }
         container.scrollTop(chapter.scrollTopOffset);
+        addBookMarkInPage();
         EventBinding();
     }
+
+    function GetPage(idx) {
+        var thisBookMark = $(".bookmarkTag:eq(" + idx + ")");
+        if (!thisBookMark.hasClass("bookmarkedTag")) {
+            //Database.writeBookMark(comic.name, comic.url, comic.image, chapter.name, idx);
+            Database.deleteBookMark({chapter:chapter.name,page:idx});
+            thisBookMark.addClass("bookmarkedTag");
+        } else {
+            thisBookMark.removeClass("bookmarkedTag");
+        }
+    }
+
     function LoadPreviousPage() {
         var leftSide = $(".left-side img");
         var rightSide = $(".right-side img");
@@ -88,27 +105,35 @@
         msg.showAsync();
     }
 
+    function addBookMarkInPage() {
+        var pagesTmp = chapter.pages.pageList;
+        Database.getBookMark(function (bookmark) {
+            for (var i = 0; i < bookmark.length; i++) {
+                for(var j = 0;j<pagesTmp.length;j++){
+                    if (bookmark[i]["chapter"] == chapter.name && bookmark[i]["page"] == j) {
+                        var thisBookMarkTmp = $(".bookmarkTag:eq(" + j + ")");
+                        thisBookMarkTmp.addClass("bookmarkedTag");
+                    }
+                }
+            }
+        });
+    }
+
     WinJS.UI.Pages.define("/pages/viewChap/viewChap.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            
-            //document.getElementById("addfavorite").addEventListener("click", doClickAddFavorite, false);
-            document.getElementById("myfavorite").addEventListener("click", TruyenManager.doClickMyFavorite, false);
-            document.getElementById("home").addEventListener("click", TruyenManager.doClickHome, false);
-            document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
-            document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
-
+            WinJS.Utilities.removeClass(document.getElementById("addbookmark"), "add-button");
             optionsParameter = options;
             var website = WebSites.webs[options.WebsiteIdx];
-            var comic = website.listComics.getById(options.ComicIdx);
-            var chapter = comic.chapters.getById(options.ChapIdx);
+            comic = website.listComics.getById(options.ComicIdx);
+            chapter = comic.chapters.getById(options.ChapIdx);
             if (chapter.isLoaded == false) {
                 website.getChapter(chapter, LoadChapter)
             } else {
                 LoadChapter(chapter);
             }
-           
+
             //$(".back-list").bind("click", function () {
             //    nav.navigate("/pages/itemDetail/itemDetail.html",
             //        {
@@ -136,8 +161,7 @@
                             ChapIdx: (optionsParameter.ChapIdx - 1 >= 0) ? optionsParameter.ChapIdx - 1 : optionsParameter.ChapIdx
                         });
             });
-            
-
+            //element.querySelector("")
 
             //$(".content").focus()
             //optionsParameter = options;
@@ -150,14 +174,12 @@
 
             //EventBinding();
         },
-        unload: function () {
-            AppBarUtils.removeAppBars();
-        }
+        unload: unload
     });
 
-    //This function can be change name and behavior later
-    function doClickAddFavorite() {
-
+    function unload() {
+        WinJS.Utilities.addClass(document.getElementById("addbookmark"), "add-button");
+    }
         //document.getElementById("localizedAppBar").winControl.hide();
     }
 

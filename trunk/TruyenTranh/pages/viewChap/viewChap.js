@@ -14,7 +14,7 @@
     function LoadChapter(chapter) {
         currentChapter = chapter;
         $(".header-title h1").text(chapter.name);
-        var tmp = '<div class="left-side"><div class="bookmarkTag"></div><img src="@src" /></div>'
+        var tmp = '<div class="left-side"><div class="bookmarkTag"></div><img class="story-image" src="@src" /></div>'
         var container = $(".chapter-container");
         for (var i = 0; i < chapter.pages.pageList.length; i++) {
             var page = chapter.pages.pageList[i];
@@ -166,6 +166,27 @@
                             ChapIdx: (optionsParameter.ChapIdx - 1 >= 0) ? optionsParameter.ChapIdx - 1 : optionsParameter.ChapIdx
                         });
             });
+
+            //Zoom full screen
+            $(".full-screen-btn").bind("click", function () {
+                var windowSize = $(window).width();
+                if ($('.story-image').width() < windowSize) {
+                    $('.story-image').css('width', windowSize);
+                    $('.full-screen-btn').css('-ms-transform', 'rotate(180deg)');
+
+                } else if ($('.story-image').width() == windowSize) {
+                    $('.story-image').css('width', '50%');
+                    $('.full-screen-btn').css('-ms-transform', 'rotate(0deg)');
+                }
+
+            });
+
+            //Close advertisement bar
+            $(".view-chap-adv-close-btn").bind("click", function () {
+                $(".view-chap-adv").hide();
+            });
+
+
             //element.querySelector("")
 
             //$(".content").focus()

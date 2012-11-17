@@ -13,29 +13,6 @@
     <script src="/js/Data.js"></script>
     <script src="/pages/viewChap/viewChap.js"></script>
 
-    <!-- Close adv bar -->
-    <script type="text/javascript">
-        function fullScreenRead() {
-            if ($('.story-image').css('width') == '50%') {
-                $('.story-image').css('width', '100%');
-                $('.full-screen-btn').css('-ms-transform', 'rotate(90deg)');
-            } else if ($('.story-image').css('width') == '100%') {
-                $('.story-image').css('width', '50%');
-                $('.full-screen-btn').css('-ms-transform', 'rotate(180deg)');
-            }
-            //if (document.getElementsByClassName(container)[0].style.width == '100%') {
-            //    document.getElementsByClassName(container)[0].style.width = '50%';
-                
-            //} else {
-            //    document.getElementsByClassName(container)[0].style.width = '100%';
-                
-            //}
-            
-        };
-        function closeAdv(element) {
-            document.getElementsByClassName(element)[0].style.display = 'none';
-        }
-    </script>
 </head>
 <body>
     <div class="left-wrapper">
@@ -60,7 +37,7 @@
             </select>
 
             <img class="back-page" src="../../images/right-arrow.png" />
-            <img class="full-screen-btn" src="../../images/full-screen-icon.png" onclick="fullScreenRead();"/>
+            <img class="full-screen-btn" src="../../images/full-screen-icon.png"/>
         </div>
 
 
@@ -76,7 +53,7 @@
         </div>
     </div>
     <div class="view-chap-adv">
-        <button class="view-chap-adv-close-btn" onclick="closeAdv('view-chap-adv');">Đóng</button>
+        <button class="view-chap-adv-close-btn">Đóng</button>
             <img src="../../images/main-menu-logo.png" />
         <img src="../../images/main-menu-logo.png" />
         <img src="../../images/main-menu-logo.png" />

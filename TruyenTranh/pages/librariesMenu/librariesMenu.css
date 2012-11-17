@@ -1,6 +1,4 @@
-﻿#body {
-    background-color:aliceblue !important;
-}
+﻿
 
 /* LIBRARIES STYLE */
 
@@ -23,7 +21,7 @@ button.webname {
     text-align: left;
     font-weight: 100;
     padding: 20px; /*color:#0094ff;*/
-    background-color:#0094ff !important; /*white !important;*/
+    background-color:#c8914e !important; /*white !important;*/
     border: none;
     transition: padding 0.8s, text-transform 0.8s;
 }

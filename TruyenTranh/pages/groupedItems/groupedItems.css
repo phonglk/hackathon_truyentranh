@@ -98,7 +98,7 @@
             .groupeditemspage .groupeditemslist .item .item-overlay .item-title {
                 font-size: 20px;
                 overflow: hidden;
-                width: 220px;
+                width: 100%;
                 padding: 0px 0px 0px 10px;
             }
 

@@ -88,7 +88,6 @@
     clear: both; text-align:center;
     margin-left: -11%;
     width: calc(100%+11%); height: 100%;
-    background-color: #c8914e;
     overflow: scroll;
     z-index: 1;
 }
@@ -118,14 +117,15 @@
 */
 .left-side {
     position:relative;
-    padding-bottom:10px;
+    padding-bottom:10px; 
+    background-color: #c8914e;
 }
 .bookmarkTag {
     position:absolute;
-    top: 0px;
-    right:20px;
+    top: -5px;
+    right:30px;
     height: 150px;
-    width: 150px;
+    width: 61px;
     background-image: url("/images/bookmark.png");
     background-size:cover;
     transition:all 0.3s;

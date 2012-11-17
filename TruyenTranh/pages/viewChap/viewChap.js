@@ -187,4 +187,4 @@
         //document.getElementById("localizedAppBar").winControl.hide();
     }
 
-})();
+)();

@@ -50,6 +50,12 @@
 
     ui.Pages.define("/pages/groupedItems/groupedItems.html", {
         ready: function (element, options) {
+            //document.getElementById("addfavorite").addEventListener("click", doClickAddFavorite, false);
+            document.getElementById("myfavorite").addEventListener("click", TruyenManager.doClickMyFavorite, false);
+            document.getElementById("home").addEventListener("click", TruyenManager.doClickHome, false);
+            document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
+            document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
+
             $(".groupeditemslist").focus();
             listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
@@ -60,10 +66,12 @@
             var website = WebSites.webs[websiteId]
 
             website.getListComics(function () {
-                loadComic.call(this,listView);
-            });
+                loadComic.call(this, listView);
+            })
 
-            
+
+
+
 
             // Set up a keyboard shortcut (ctrl + alt + g) to navigate to the
             // current group when not in snapped mode.
@@ -95,21 +103,25 @@
                     initializeLayout(listView, viewState);
                 }
             }
+        },
+
+        unload: function () {
+            AppBarUtils.removeAppBars();
+
+            // This function updates the ListView with new layouts
+
+
+            //_itemInvoked: function (args) {
+            //    if (appView.value === appViewState.snapped) {
+            //        // If the page is snapped, the user invoked a group.
+            //        var group = Data.groups.getAt(args.detail.itemIndex);
+            //        this.navigateToGroup(group.key);
+            //    } else {
+            //        // If the page is not snapped, the user invoked an item.
+            //        var item = Data.items.getAt(args.detail.itemIndex);
+            //        nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
+            //    }
+            //}
         }
-
-        // This function updates the ListView with new layouts
-        
-
-        //_itemInvoked: function (args) {
-        //    if (appView.value === appViewState.snapped) {
-        //        // If the page is snapped, the user invoked a group.
-        //        var group = Data.groups.getAt(args.detail.itemIndex);
-        //        this.navigateToGroup(group.key);
-        //    } else {
-        //        // If the page is not snapped, the user invoked an item.
-        //        var item = Data.items.getAt(args.detail.itemIndex);
-        //        nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
-        //    }
-        //}
     });
 })();

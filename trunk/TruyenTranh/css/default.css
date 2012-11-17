@@ -2,9 +2,18 @@
     height: 100%;
     width: 100%;
 }
-.add-button {
-    visibility: hidden;
+
+/* Color customization */
+/* Set the separator color */
+.win-appbar.customColor hr.win-command {
+    background-color: rgba(0,0,0,0.5);
 }
+/* Set the background color */
+.win-appbar.customColor {
+    /* Set the AppBar background color */
+    background-color: rgba(0,0,0,0.5);
+}
+
 .fragment {
     /* Define a grid with rows for a banner and a body */
     -ms-grid-columns: 1fr;

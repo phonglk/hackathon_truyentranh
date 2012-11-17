@@ -183,3 +183,10 @@
         background-color: black;
     }
 }
+
+.win-medium {
+    position:fixed;
+    left:50%;
+    bottom:50%;
+    color: black !important;
+}

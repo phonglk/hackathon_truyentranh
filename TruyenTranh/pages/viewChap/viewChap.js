@@ -9,21 +9,25 @@
     var optionsParameter;
     var currentChapter = null;
     var lastDir = "next"
-    var comic, chapter,pages;
+    var comic,chapter,pages;
 
     function LoadChapter(chapter) {
         currentChapter = chapter;
         $(".header-title h1").text(chapter.name);
-        var tmp = '<div class="left-side"><img src="@src" /></div>'
+        var tmp = '<div class="left-side"><div class="bookmarkTag"></div><img class="story-image" src="@src" /></div>'
         var container = $(".chapter-container");
         pages = chapter.pages
         pages.sort()
         for (var i = 0; i < chapter.pages.pageList.length; i++) {
             var page = chapter.pages.pageList[i];
             var $page = $(tmp.replace("@src", page.url));
+            (function(i){
+                $page.find(".bookmarkTag").bind("click", function () { GetPage(i) });
+            })(i)
             container.append($page);
         }
         container.scrollTop(chapter.scrollTopOffset);
+        addBookMarkInPage();
         EventBinding();
     }
 
@@ -103,7 +107,6 @@
         msg.showAsync();
     }
 
-
     function addBookMarkInPage() {
         var pagesTmp = pages.pageList;
         Database.getBookMark(function (bookmark) {
@@ -118,14 +121,18 @@
         });
     }
 
-
     WinJS.UI.Pages.define("/pages/viewChap/viewChap.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            optionsParameter = options;
-
+                optionsParameter = options;
             try{
+                document.getElementById("myfavorite").addEventListener("click", TruyenManager.doClickMyFavorite, false);
+                document.getElementById("home").addEventListener("click", TruyenManager.doClickHome, false);
+                document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
+                document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
+
+                
                 var website = WebSites.webs[options.WebsiteIdx];
                 comic = website.listComics.getById(options.ComicIdx);
                 chapter = comic.chapters.getById(options.ChapIdx);
@@ -145,6 +152,7 @@
                     website.getChapterByURL(url, LoadChapter)
                 }
             }
+
             //$(".back-list").bind("click", function () {
             //    nav.navigate("/pages/itemDetail/itemDetail.html",
             //        {
@@ -152,7 +160,9 @@
             //            ComicIdx: optionsParameter.ComicIdx
             //        });
             //});
-            $(".next-page").bind("click", function () {
+
+            //Move to next chapter
+            $(".next-chapter").bind("click", function () {
                 nav.navigate("/pages/viewChap/viewChap.html",
                     {
                         WebsiteIdx: optionsParameter.WebsiteIdx,
@@ -161,7 +171,8 @@
                     });
             });
 
-            $(".back-page").bind("click", function () {
+            //Move to previous chapter
+            $(".back-chapter").bind("click", function () {
                 nav.navigate("/pages/viewChap/viewChap.html",
                         {
                             WebsiteIdx: optionsParameter.WebsiteIdx,
@@ -169,8 +180,28 @@
                             ChapIdx: (optionsParameter.ChapIdx - 1 >= 0) ? optionsParameter.ChapIdx - 1 : optionsParameter.ChapIdx
                         });
             });
-            
 
+            //Zoom full screen
+            $(".full-screen-btn").bind("click", function () {
+                var windowSize = $(window).width();
+                if ($('.story-image').width() < windowSize) {
+                    $('.story-image').css('width', windowSize);
+                    $('.full-screen-btn').css('-ms-transform', 'rotate(180deg)');
+
+                } else if ($('.story-image').width() == windowSize) {
+                    $('.story-image').css('width', '50%');
+                    $('.full-screen-btn').css('-ms-transform', 'rotate(0deg)');
+                }
+
+            });
+
+            //Close advertisement bar
+            $(".view-chap-adv-close-btn").bind("click", function () {
+                $(".view-chap-adv").hide();
+            });
+
+
+            //element.querySelector("")
 
             //$(".content").focus()
             //optionsParameter = options;
@@ -183,10 +214,12 @@
 
             //EventBinding();
         },
-        unload: unload
+        unload: function () {
+            AppBarUtils.removeAppBars();
+        }
     });
 
-    function unload() {
-        
+        //document.getElementById("localizedAppBar").winControl.hide();
     }
-})();
+
+)();

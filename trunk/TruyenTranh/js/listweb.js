@@ -208,7 +208,7 @@
                 var $this = $(this);
                 var name = $this.find("a").text();
                 var chapter = parseInt(name.match(/\d+$/));
-                name = name.match(/(.*)\d+$/)[1];
+                //name = name.match(/(.*)\d+$/)[1];
                 var url = urls_using.TruyenTranhTuan.root + $this.find("a").attr("href");
                 var comic = {
                     name: name,

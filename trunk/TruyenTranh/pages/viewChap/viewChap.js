@@ -15,24 +15,34 @@
     function LoadChapter(chapter) {
         currentChapter = chapter;
         $(".header-title h1").text(chapter.name);
-        var tmp = '<div class="left-side"><div class="bookmarkTag"></div><img class="story-image" src="@src" /></div>'
+        var tmp = '<div class="left-side"><div class="bookmarkTag"></div><img class="story-image" src="@src.tmp" /></div>'
         var container = $(".chapter-container");
         pages = chapter.pages
         pages.sort()
+        var imgs = new Array();
         for (var i = 0; i < chapter.pages.pageList.length; i++) {
             var page = chapter.pages.pageList[i];
             var $page = $(tmp.replace("@src", page.url));
+            imgs.push($page.find("img"));
             (function(i){
                 $page.find(".bookmarkTag").bind("click", function () { GetPage(i) });
             })(i)
             container.append($page);
         }
-        $(".story-image").bind("load",function(evt){
-            var a = evt;
-        })
         container.scrollTop(chapter.scrollTopOffset);
         addBookMarkInPage();
         EventBinding();
+        function load(i) {
+            if (imgs[i]) {
+                var img = imgs[i];
+                img.attr("src", img.attr("src").replace(".tmp",""));
+                img.bind("load",function(){
+                    i++;
+                    load(i);
+                })
+            }
+        }
+        load(0);
     }
 
     function GetPage(idx) {

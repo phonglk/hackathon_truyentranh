@@ -141,7 +141,25 @@
         cursor: pointer;
         background-color:#808080;
     }
-
+.left-side {
+    position:relative;
+    padding-bottom:10px;
+    background-color:red;
+}
+.bookmarkTag {
+    position:absolute;
+    top: 0px;
+    right:20px;
+    height: 48px;
+    width: 48px;
+    background-image: url("/images/bookmark.png")
+}
+    .bookmarkTag:hover {
+        border:1px solid red;
+    }
+.bookmarkedTag {
+    border:2px green solid;
+}
     .view-chap-adv img {
         height: 48px;
         border: none;

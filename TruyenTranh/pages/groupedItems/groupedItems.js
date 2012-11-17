@@ -8,6 +8,7 @@
     var listView;
     var optionsParameter;
 
+
     function loadComic(listView) {
         //webTruyen
 

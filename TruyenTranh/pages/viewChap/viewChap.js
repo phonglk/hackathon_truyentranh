@@ -10,6 +10,7 @@
     var currentChapter = null;
     var lastDir = "next"
     var comic,chapter,pages;
+    var ComicName,img;
 
     function LoadChapter(chapter) {
         currentChapter = chapter;
@@ -37,10 +38,11 @@
     function GetPage(idx) {
         var thisBookMark = $(".bookmarkTag:eq(" + idx + ")");
         if (!thisBookMark.hasClass("bookmarkedTag")) {
-            Database.writeBookMark(comic.name, comic.url, comic.image, chapter.name, idx);
+            Database.writeBookMark(typeof(comic) == "undefined" ? img : comic.image, typeof(chapter) == "undefined" ? ComicName : chapter.name , idx);
             thisBookMark.addClass("bookmarkedTag");
         } else {
-            Database.deleteBookMark({ chapter: chapter.name, page: idx });
+            var name = typeof(chapter) == "undefined" ? ComicName : chapter.name
+            Database.deleteBookMark({ chapter:name , page: idx });
             thisBookMark.removeClass("bookmarkedTag");
         }
     }
@@ -115,7 +117,7 @@
         Database.getBookMark(function (bookmark) {
             for (var i = 0; i < bookmark.length; i++) {
                 for(var j = 0;j<pagesTmp.length;j++){
-                    if (bookmark[i]["chapter"] == chapter.name && bookmark[i]["page"] == j) {
+                    if (bookmark[i]["chapter"] == ComicName && bookmark[i]["page"] == j) {
                         var thisBookMarkTmp = $(".bookmarkTag:eq(" + j + ")");
                         thisBookMarkTmp.addClass("bookmarkedTag");
                     }
@@ -135,8 +137,8 @@
                 document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
                 document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
 
-                var ComicName = options.ComicName;
-                var img = options.img;
+                ComicName = options.ComicName;
+                img = options.img;
                 var website = WebSites.webs[options.WebsiteIdx];
                 comic = website.listComics.getById(options.ComicIdx);
                 chapter = comic.chapters.getById(options.ChapIdx);

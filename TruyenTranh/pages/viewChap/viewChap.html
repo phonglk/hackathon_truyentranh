@@ -15,8 +15,22 @@
 
     <!-- Close adv bar -->
     <script type="text/javascript">
-        function fullScreenRead(container) {
-            document.getElementsByClassName(container)[0].setAttribute("width", '100%');
+        function fullScreenRead() {
+            if ($('.story-image').css('width') == '50%') {
+                $('.story-image').css('width', '100%');
+                $('.full-screen-btn').css('-ms-transform', 'rotate(90deg)');
+            } else if ($('.story-image').css('width') == '100%') {
+                $('.story-image').css('width', '50%');
+                $('.full-screen-btn').css('-ms-transform', 'rotate(180deg)');
+            }
+            //if (document.getElementsByClassName(container)[0].style.width == '100%') {
+            //    document.getElementsByClassName(container)[0].style.width = '50%';
+                
+            //} else {
+            //    document.getElementsByClassName(container)[0].style.width = '100%';
+                
+            //}
+            
         };
         function closeAdv(element) {
             document.getElementsByClassName(element)[0].style.display = 'none';
@@ -46,7 +60,7 @@
             </select>
 
             <img class="back-page" src="../../images/right-arrow.png" />
-            <button class="full-screen-btn" onclick="fullScreenRead('story-image');"></button>
+            <img class="full-screen-btn" src="../../images/full-screen-icon.png" onclick="fullScreenRead();"/>
         </div>
 
 

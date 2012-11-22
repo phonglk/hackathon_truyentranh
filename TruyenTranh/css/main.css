@@ -4,7 +4,11 @@ body {
     margin: 0px;
     background-color:#c8914e;
 }
-
+#mainMenu-container {
+    height:100%;
+    width:100%;
+    background-color: #0094ff;
+}
 .left-wrapper {
     position: relative;
     top: 0px;

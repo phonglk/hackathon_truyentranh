@@ -1,8 +1,4 @@
-﻿.my-header {
-    position: fixed;
-    top: 0;
-}
-
+﻿
 .view-chap-back-button-container {
     position: relative;
     height: 60px !important;
@@ -152,6 +148,7 @@
     transition: all 0.2s;
     overflow-x: auto;
     overflow-y: hidden;
+    display:none;
 }
 
 .view-chap-adv .view-chap-adv-close-btn {
@@ -174,7 +171,119 @@
         border: 1px solid white;
     }
 
+@media screen and (-ms-view-state: snapped) {
+
     
+
+    .view-chap-back-button-container {
+    position: relative;
+    height: 60px !important;
+    color: white;
+    background-color: black;
+}
+
+.view-chap-win-backbutton {
+    margin-top: 10px;
+    color: white;
+    border-color: white;
+}
+
+.view-chap-header-title {
+    position: relative;
+    height: 30px;
+    color: white;
+    background-color: black;
+    padding: 20px 0px 10px 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+    .view-chap-header-title h1 {
+        font-size: 20px;
+        width: 100%;
+        float: left;
+    }
+
+    .view-chap-header-title .view-chap-chapter-list {
+        display:none;
+    }
+    .back-page, .next-page {
+        display: none;
+    }
+
+.full-screen-btn {
+    display:none;
+}
+
+.chapter-container {
+        position: relative; clear: both;
+        margin-left: calc(-40%);
+        width: calc(100% + 40%);
+        padding: 0px 0px 0px 0px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 1;
+    }
+
+    .chapter-container .story-image {
+        width: 90%;
+        transition:all 0.3s;
+    }
+
+/*
+.left-side,
+.right-side {
+    width: 80%;
+    margin: auto;
+}
+
+.right-side {
+}
+
+    .left-side img,
+    .right-side img {
+        width: 100%;
+        padding: 0;
+        margin: 0px 0px 10px 0px;
+        z-index: 99999;
+    }
+*/
+.left-side {
+    position:relative;
+    padding-bottom:10px; 
+    background-color: #c8914e;
+}
+.bookmarkTag {
+    position:absolute;
+    top: -5px;
+    right:30px;
+    height: 120px;
+    width: 61px;
+    background-image: url("/images/bookmark.png");
+    background-size:cover;
+    transition:all 0.3s;
+}
+    .bookmarkTag:hover {
+        cursor:pointer;
+        background-image: url("/images/bookmarked.png");
+    }
+.bookmarkedTag {
+    background-image: url("/images/bookmarked.png");
+    transition:all 0.3s;
+}
+.bookmarkedTag:hover {
+        cursor:pointer;
+        background-image: url("/images/bookmark.png");
+    }
+
+}
+
+
+
+
+
+
+
+
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
     .chapter-container {

@@ -41,7 +41,14 @@
             EventBinding();
 
             //$(".fakDB").bind("click", Database.createDatabase);
-            //$(".delDB").bind("click", Database.deleteDatabase);
+            $(".delDB").bind("click",
+                function(){
+                    Database.deleteDatabase();
+                    nav.navigate("/pages/bookmark/bookmark.html");
+
+                    nav.history.backStack.pop();
+                }
+            );
             //$(".showDB").bind("click", function () { initbookmark(listview) });
         },
 

@@ -4,19 +4,19 @@
 
     var listweb = new Array();
 
-    var blogtruyen = new webTruyen("Blog Truyện", "blogtruyen.com", "");
+    //var blogtruyen = new webTruyen("Blog Truyện", "blogtruyen.com", "");
     truyentranhtuan = new webTruyen("Truyện Tranh Tuần", "truyentranhtuan.com", "");
-    var vnsharing =  new webTruyen("VnSharing", "vnsharing.com", "");
-    var webtruyen = new webTruyen("Web Truyện", "webtruyen.com", "");
-    var mangafox = new webTruyen("MangaFox", "mangafox.me", "");
-    var mangahere = new webTruyen("MangaHere", "mangahere.net", "");
+    //var vnsharing =  new webTruyen("VnSharing", "vnsharing.com", "");
+    //var webtruyen = new webTruyen("Web Truyện", "webtruyen.com", "");
+    //var mangafox = new webTruyen("MangaFox", "mangafox.me", "");
+    //var mangahere = new webTruyen("MangaHere", "mangahere.net", "");
 
-    listweb.push(blogtruyen);
+    //listweb.push(blogtruyen);
     listweb.push(truyentranhtuan);
-    listweb.push(vnsharing);
-    listweb.push(webtruyen);
-    listweb.push(mangafox);
-    listweb.push(mangahere);
+    //listweb.push(vnsharing);
+    //listweb.push(webtruyen);
+    //listweb.push(mangafox);
+    //listweb.push(mangahere);
 
 
     var urls = {
@@ -49,84 +49,84 @@
     var mode = "real";
     var urls_using = urls[mode];
 
-    blogtruyen.getListComics = function (callback) {
-        var listComic = [];
-        var lastPage = 0;
-        blogtruyen.listComics.comicList = new Array();
-        WinJS.xhr({
-            url: "http://blogtruyen.com/danhsach/tatca",
-        }).done(
-            function completed(xhr) {
-                var response = xhr.responseText;
+    //blogtruyen.getListComics = function (callback) {
+    //    var listComic = [];
+    //    var lastPage = 0;
+    //    blogtruyen.listComics.comicList = new Array();
+    //    WinJS.xhr({
+    //        url: "http://blogtruyen.com/danhsach/tatca",
+    //    }).done(
+    //        function completed(xhr) {
+    //            var response = xhr.responseText;
 
-                //lastPage = parseInt($(response).find(".page:last a")[0].attr("href").match(/\((.*)\)/)[1]);
+    //            //lastPage = parseInt($(response).find(".page:last a")[0].attr("href").match(/\((.*)\)/)[1]);
 
-                lastPage = 113;
+    //            lastPage = 113;
 
-                for (var i = 0; i < lastPage; i++) {
+    //            for (var i = 0; i < lastPage; i++) {
 
-                    var data = new FormData();
-                    data.append('listOrCate', 'list');
-                    data.append('key', 'tatca');
-                    data.append('page', i);
-                    data.append('orderBy', 'title');
+    //                var data = new FormData();
+    //                data.append('listOrCate', 'list');
+    //                data.append('key', 'tatca');
+    //                data.append('page', i);
+    //                data.append('orderBy', 'title');
 
-                    WinJS.xhr({
-                        url: "http://blogtruyen.com/partialDanhSach/listtruyen/",
-                        type: 'POST',
-                        data: data,
-                    }).done(
-                        function comp(xhrr) {
-                            var resp = xhrr.responseText;
-                            var row = $(resp).find(".row div a");
-                            for (var i = 0; i < row.length; i++) {
-                                var comic = {
-                                    name: row[i].text.trim(),
-                                    url: "http://blogtruyen.com" + $(row[i]).attr("href"),
-                                }
-                                blogtruyen.listComics.add("", comic)
-                            }
-                            callback.call(blogtruyen);
-                        },
-                        function error(e) {
-                            //Windows.UI.Popups.MessageDialog(e.toString()).showAsync();
-                        },
-                        function process() {
-                        }
-                    )
-                }
-            }
-        );
-    }
+    //                WinJS.xhr({
+    //                    url: "http://blogtruyen.com/partialDanhSach/listtruyen/",
+    //                    type: 'POST',
+    //                    data: data,
+    //                }).done(
+    //                    function comp(xhrr) {
+    //                        var resp = xhrr.responseText;
+    //                        var row = $(resp).find(".row div a");
+    //                        for (var i = 0; i < row.length; i++) {
+    //                            var comic = {
+    //                                name: row[i].text.trim(),
+    //                                url: "http://blogtruyen.com" + $(row[i]).attr("href"),
+    //                            }
+    //                            blogtruyen.listComics.add("", comic)
+    //                        }
+    //                        callback.call(blogtruyen);
+    //                    },
+    //                    function error(e) {
+    //                        //Windows.UI.Popups.MessageDialog(e.toString()).showAsync();
+    //                    },
+    //                    function process() {
+    //                    }
+    //                )
+    //            }
+    //        }
+    //    );
+    //}
     
 
-    blogtruyen.getListChapter = function (name) {
-        if (name != null && blogtruyen.listComics != null) {
-            var comic = blogtruyen.listComics.get(name);
-            (function(comic){
-                WinJS.xhr({
-                    url: "http://phong:8080/blogtruyen.com/anima/anima.htm"
-                }).done(
-                    function completed(xhr) {
-                        var response = xhr.responseText;
-                        var atag = $(".row-chapter a");
-                        for (var i = 0; i < atag.length; i++) {
-                            var item = {
-                                "name": atag.eq(j).text().trim(),
-                                "url": atag.eq(j).attr("href")
-                            }
-                            comic.chapters.add(item);
-                        }
-                    },
-                    function error() {
-                    }
-                )
-            })(comic)
-        }
-    }
-    blogtruyen.getChapter = function (comicName,chapter) {
+    //blogtruyen.getListChapter = function (name) {
+    //    if (name != null && blogtruyen.listComics != null) {
+    //        var comic = blogtruyen.listComics.get(name);
+    //        (function(comic){
+    //            WinJS.xhr({
+    //                url: "http://phong:8080/blogtruyen.com/anima/anima.htm"
+    //            }).done(
+    //                function completed(xhr) {
+    //                    var response = xhr.responseText;
+    //                    var atag = $(".row-chapter a");
+    //                    for (var i = 0; i < atag.length; i++) {
+    //                        var item = {
+    //                            "name": atag.eq(j).text().trim(),
+    //                            "url": atag.eq(j).attr("href")
+    //                        }
+    //                        comic.chapters.add(item);
+    //                    }
+    //                },
+    //                function error() {
+    //                }
+    //            )
+    //        })(comic)
+    //    }
+    //}
+    //blogtruyen.getChapter = function (comicName,chapter) {
 
-    }
+    //}
 
     //Truyen Tranh Tuan 
     truyentranhtuan.getListComics = function(callback){
@@ -360,9 +360,9 @@
         }).done(onComplete, onEror);
     }
 
-    vnsharing.getListComics = webtruyen.getListComics = mangafox.getListComics = mangahere.getListComics = function () {
-        Windows.UI.Popups.MessageDialog("This function has not implemented yet.").showAsync();
-    }
+    //vnsharing.getListComics = webtruyen.getListComics = mangafox.getListComics = mangahere.getListComics = function () {
+    //    Windows.UI.Popups.MessageDialog("This function has not implemented yet.").showAsync();
+    //}
 
     WinJS.Namespace.define("WebSites", {
         webs: listweb,

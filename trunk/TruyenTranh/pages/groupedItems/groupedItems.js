@@ -43,9 +43,9 @@
         /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
         if (viewState === appViewState.snapped) {
-            listView.itemDataSource = Data.groups.dataSource;
-            listView.groupDataSource = null;
             listView.layout = new ui.ListLayout();
+        } else {
+            listView.layout = new ui.GridLayout();
         }
     }
 
@@ -95,14 +95,14 @@
 
             var listView = element.querySelector(".groupeditemslist").winControl;
             if (lastViewState !== viewState) {
-                if (lastViewState === appViewState.snapped || viewState === appViewState.snapped) {
+                //if (lastViewState === appViewState.snapped || viewState === appViewState.snapped) {
                     var handler = function (e) {
                         listView.removeEventListener("contentanimating", handler, false);
                         e.preventDefault();
                     }
                     listView.addEventListener("contentanimating", handler, false);
                     initializeLayout(listView, viewState);
-                }
+                //}
             }
         },
 

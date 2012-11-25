@@ -39,11 +39,11 @@
     function  initializeLayout(listView, viewState) {
         /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
-        if (viewState === appViewState.snapped || viewState === appViewState.fullScreenPortrait) {
-            listView.layout = new ui.ListLayout();
-        } else {
-            listView.layout = new ui.GridLayout({ groupHeaderPosition: "left" });
-        }
+        //if (viewState === appViewState.snapped || viewState === appViewState.fullScreenPortrait) {
+        //    listView.layout = new ui.ListLayout();
+        //} else {
+        //    listView.layout = new ui.GridLayout({ groupHeaderPosition: "left" });
+        //}
     }
 
 
@@ -87,8 +87,8 @@
 
             var listView = element.querySelector(".chapterslist").winControl;
             if (lastViewState !== viewState) {
-                if (lastViewState === appViewState.snapped || viewState === appViewState.snapped ||
-                    lastViewState === appViewState.fullScreenPortrait || viewState == appViewState.fullScreenPortrait) {
+                //if (lastViewState === appViewState.snapped || viewState === appViewState.snapped ||
+                //    lastViewState === appViewState.fullScreenPortrait || viewState == appViewState.fullScreenPortrait) {
                     var handler = function (e) {
                         listView.removeEventListener("contentanimating", handler, false);
                         e.preventDefault();
@@ -97,7 +97,7 @@
                     var firstVisible = listView.indexOfFirstVisible;
                     initializeLayout(listView, viewState);
                     listView.indexOfFirstVisible = firstVisible;
-                }
+                //}
             }
         },
 

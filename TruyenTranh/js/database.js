@@ -96,7 +96,7 @@
         };
     }
 
-    function writeBookMark( img ,chapter ,page) {
+    function writeBookMark( url, img ,chapter ,page) {
         if (truyenTranhDB) {
             truyenTranhDB.close();
         }
@@ -117,7 +117,7 @@
             };
 
             //add bookmark
-            var addResult = txn.objectStore("bookmark").add({ img: img, chapter: chapter ,page:page});
+            var addResult = txn.objectStore("bookmark").add({url: url, img: img, chapter: chapter ,page:page});
 
             addResult.onerror = function (evt) {
                 Windows.UI.Popups.MessageDialog("Add data error").showAsync()

@@ -9,6 +9,7 @@
     var nav = WinJS.Navigation;
     var ui = WinJS.UI;
     var listview;
+    var optionsParameter;
 
     function initbookmark(listview) {
         Database.getBookMark(function (bookmark) {
@@ -21,6 +22,13 @@
         });
     }
 
+    function EventBinding() {
+        listview.oniteminvoked = function (e) {
+            nav.navigate("/pages/viewChap/viewChap.html", { url: e.detail.itemPromise._value.data["url"], ChapIdx: e.detail.itemPromise._value.data["chapter"], ComicName: e.detail.itemPromise._value.data["name"], img: e.detail.itemPromise._value.data["img"] })
+        }
+    }
+
+
     ui.Pages.define("/pages/bookmark/bookmark.html", {
         ready: function (element, options) {
             $(".groupeditemslist").focus();
@@ -30,9 +38,11 @@
 
             initbookmark(listview);
 
-            $(".fakDB").bind("click", Database.createDatabase);
-            $(".delDB").bind("click", Database.deleteDatabase);
-            $(".showDB").bind("click", function () { initbookmark(listview) });
+            EventBinding();
+
+            //$(".fakDB").bind("click", Database.createDatabase);
+            //$(".delDB").bind("click", Database.deleteDatabase);
+            //$(".showDB").bind("click", function () { initbookmark(listview) });
         },
 
         // This function updates the page layout in response to viewState changes.

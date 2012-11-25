@@ -256,8 +256,8 @@
     position:absolute;
     top: -5px;
     right:30px;
-    height: 120px;
-    width: 61px;
+    height: 60px;
+    width: 30px;
     background-image: url("/images/bookmark.png");
     background-size:cover;
     transition:all 0.3s;

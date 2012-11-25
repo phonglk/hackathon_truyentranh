@@ -87,15 +87,10 @@
             }
 
 @media screen and (-ms-view-state: snapped) {
-    .itemdetailpage .content {
-        -ms-grid-row: 3;
-        -ms-grid-row-span: 1;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
+    
+    /*
         .itemdetailpage .content article {
-            /* Define a single column, vertically scrolling article in snapped mode. */
+            /* Define a single column, vertically scrolling article in snapped mode. 
             -ms-grid-columns: 500px 1fr;
             -ms-grid-row: 3;
             display: -ms-grid;
@@ -104,8 +99,99 @@
             margin-top: 6px;
             width: 95%;
             padding: 0px 5px 0px 5px;
+        }*/
+
+        .item-detail-container {
+        position:relative;
+        margin-left:calc(-40%);
+        width: calc(100% + 40%);
+        padding:0px 0px 0px 0px;
+        overflow-x:hidden;
+        overflow-y:auto;
+    }
+    .itemdetailpage {
+    position: relative;
+    width: calc(100% + 40%);
+        height:100%;
+}
+
+.itemdetailpage .content {
+    -ms-grid-column: 1;
+    -ms-grid-row-span: 3;
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+    .itemdetailpage .content h2 {
+        margin: 5px 0px 10px 0px;
+        text-align: left;
+    }
+
+    .itemdetailpage .content article {
+        /* Define a multi-column, horizontally scrolling article by default. */
+        column-count: 1;
+        width: 100%;
+        height: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding:0px 20px 0px 0px;
+        background-color: rgba(0,0,0,0.7);
+        overflow-x:hidden;
+        overflow-y:auto;
+        display:-ms-grid;
+    }
+    /*  .itemdetailpage .content .item-subtitle {
+        margin-bottom: 16px;
+        margin-top: 10px;
+        width: 100%;
+        } */
+
+    .itemdetailpage .content .item-image-container {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        width: 100%;
+        margin:20px 0px 0px 10px;
+    }
+
+        .itemdetailpage .content .item-image-container img {
+            width:65%
         }
 
+    .itemdetailpage .content .item-description {
+        position:relative;
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+        width: 100%;
+        overflow-x: hidden;
+        margin:20px 0px 0px 10px;
+    }
+
+        .itemdetailpage .content .item-description .item-des {
+            position:relative;
+            text-align: justify;
+            padding: 0px 10px 0px 0px;
+            width:65%
+        }
+
+
+    .itemdetailpage .content .item-list-chapter {
+        -ms-grid-column: 1;
+        -ms-grid-row: 3;
+        margin:20px 0px 0px 10px;
+        width:65%
+    }
+
+        .itemdetailpage .content .item-list-chapter h4 {
+            padding: 3px 0px 3px 10px;
+        }
+
+
+            .itemdetailpage .content .item-list-chapter h4:hover {
+                cursor: pointer;
+            }
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {

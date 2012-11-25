@@ -6,7 +6,6 @@
     width: 100%;
     height:calc(100% - 120px);
 }
-
 .list-website-control {
     position: relative;
     height: 100%;
@@ -70,15 +69,16 @@ button.webname {
         width: 100%;
         overflow:hidden;
     }
+
+
     button.webname {
         width: 300px; height:100%;
-    font-size: 20px;
-    text-align: left;
-    font-weight: 100;
-    padding:23px 20px 23px 20px;
-    background-color: #0094ff !important;
-    
-    overflow:hidden;
+        font-size: 20px;
+        text-align: left;
+        font-weight: 100;
+        padding:23px 20px 23px 20px;
+        background-color: #c8914e !important;
+        overflow:hidden;
     }
 
     .webname:hover {

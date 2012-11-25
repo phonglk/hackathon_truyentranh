@@ -48,7 +48,7 @@
     function GetPage(idx) {
         var thisBookMark = $(".bookmarkTag:eq(" + idx + ")");
         if (!thisBookMark.hasClass("bookmarkedTag")) {
-            Database.writeBookMark(typeof(comic) == "undefined" ? img : comic.image, typeof(chapter) == "undefined" ? ComicName : chapter.name , idx);
+            Database.writeBookMark(optionsParameter.url ,typeof(comic) == "undefined" ? img : comic.image, ComicName , idx);
             thisBookMark.addClass("bookmarkedTag");
         } else {
             var name = typeof(chapter) == "undefined" ? ComicName : chapter.name
@@ -147,7 +147,7 @@
                 document.getElementById("listcomic").addEventListener("click", TruyenManager.doClickListComic, false);
                 document.getElementById("find").addEventListener("click", TruyenManager.doClickSearch, false);
 
-                ComicName = options.ComicName;
+                ComicName = options.ChapIdx;
                 img = options.img;
                 var website = WebSites.webs[options.WebsiteIdx];
                 comic = website.listComics.getById(options.ComicIdx);

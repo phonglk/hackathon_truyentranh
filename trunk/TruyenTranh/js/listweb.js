@@ -48,40 +48,55 @@
     }
     var mode = "real";
     var urls_using = urls[mode];
-    blogtruyen.getListComics = function (onComplete) {
+
+    blogtruyen.getListComics = function (callback) {
         var listComic = [];
-        var abc = ['khac','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        var urlTmp = "http://phong:8080/blogtruyen.com/danhsach.@thutu.htm";
-        for (var i = 0; i < abc.length; i++) {
-            var replaceUrl = urlTmp.replace("@thutu", abc[i]);
-            var cat = abc[i];
-            (function(cat){
-                WinJS.xhr({
-                    url : replaceUrl
-                }).done(
-                    function complete(xhr) {
-                        var response = xhr.responseText;
-                        var atag = $(".row a", response);
-                        for (var j = 0; j < atag.length; j++) {
-                            var item = {
-                                "name": atag.eq(j).text().trim(),
-                                "url": atag.eq(j).attr("href")
-                            }
+        var lastPage = 0;
+        blogtruyen.listComics.comicList = new Array();
+        WinJS.xhr({
+            url: "http://blogtruyen.com/danhsach/tatca",
+        }).done(
+            function completed(xhr) {
+                var response = xhr.responseText;
 
-                            if (mode == "test") {
-                                var comicName = item.url.match(/\/truyen\/(.*)/)[1];
-                                item.url = urls_using.BlogTruyen.listChapter.replace(/@name/g,comicName);
-                            }
+                //lastPage = parseInt($(response).find(".page:last a")[0].attr("href").match(/\((.*)\)/)[1]);
 
-                            blogtruyen.listComics.add(cat, item);
+                lastPage = 113;
+
+                for (var i = 0; i < lastPage; i++) {
+
+                    var data = new FormData();
+                    data.append('listOrCate', 'list');
+                    data.append('key', 'tatca');
+                    data.append('page', i);
+                    data.append('orderBy', 'title');
+
+                    WinJS.xhr({
+                        url: "http://blogtruyen.com/partialDanhSach/listtruyen/",
+                        type: 'POST',
+                        data: data,
+                    }).done(
+                        function comp(xhrr) {
+                            var resp = xhrr.responseText;
+                            var row = $(resp).find(".row div a");
+                            for (var i = 0; i < row.length; i++) {
+                                var comic = {
+                                    name: row[i].text.trim(),
+                                    url: "http://blogtruyen.com" + $(row[i]).attr("href"),
+                                }
+                                blogtruyen.listComics.add("", comic)
+                            }
+                            callback.call(blogtruyen);
+                        },
+                        function error(e) {
+                            //Windows.UI.Popups.MessageDialog(e.toString()).showAsync();
+                        },
+                        function process() {
                         }
-                    },
-                    function error() {
-                    }
-                )
-            })(cat)
-        }
-        
+                    )
+                }
+            }
+        );
     }
     
 
@@ -117,6 +132,7 @@
     truyentranhtuan.getListComics = function(callback){
         var url = urls_using.TruyenTranhTuan.listComic;
         truyentranhtuan.listComics.comicList = new Array();
+
         function onSuccess(xhr) {
             var html = xhr.responseText;
             var $site = $(html);
@@ -344,7 +360,7 @@
         }).done(onComplete, onEror);
     }
 
-    blogtruyen.getListComics = vnsharing.getListComics = webtruyen.getListComics = mangafox.getListComics = mangahere.getListComics = function () {
+    vnsharing.getListComics = webtruyen.getListComics = mangafox.getListComics = mangahere.getListComics = function () {
         Windows.UI.Popups.MessageDialog("This function has not implemented yet.").showAsync();
     }
 
